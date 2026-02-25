@@ -48,8 +48,8 @@ func Build(target string, results []checker.EndpointResult) Report {
 			ep.Error = r.Error.Error()
 		} else {
 			ep.StatusCode = r.StatusCode
-			ep.Score = r.Score
-			totalScore += r.Score
+			ep.Score = ScoreHeaders(r.Headers)
+			totalScore += ep.Score
 			validCount++
 			ep.Headers = buildHeaderResults(r)
 		}
