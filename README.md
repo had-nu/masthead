@@ -36,10 +36,10 @@ cd masthead
 go mod tidy
 
 # Build the binary
-go build -o masthead ./cmd/masthead
+go build -o bin/masthead ./cmd/masthead
 
 # Run the tool
-./masthead
+./bin/masthead
 ```
 
 ## Usage
@@ -48,13 +48,13 @@ Simply run the binary and follow the on-screen prompts, or use the command-line 
 
 ```bash
 # Interactive mode
-./masthead
+./bin/masthead
 
 # Command-line flags
-./masthead -target example.com
-./masthead -target example.com -max-endpoints 25
-./masthead -target example.com -output json
-./masthead -target example.com -output csv -out report.csv
+./bin/masthead -target example.com
+./bin/masthead -target example.com -max-endpoints 25
+./bin/masthead -target example.com -output json
+./bin/masthead -target example.com -output csv -out report.csv
 ```
 
 ### Available Flags
