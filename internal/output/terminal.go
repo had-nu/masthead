@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/had-nu/sec-headers-check/internal/headers"
+	"github.com/had-nu/masthead/internal/headers"
 )
 
 // ANSI colour codes. Kept package-private; only terminal.go uses them.

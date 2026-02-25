@@ -10,10 +10,11 @@ import (
 	"os/signal"
 	"regexp"
 	"strings"
+	"time"
 
-	"github.com/had-nu/sec-headers-check/internal/checker"
-	"github.com/had-nu/sec-headers-check/internal/mapper"
-	"github.com/had-nu/sec-headers-check/internal/output"
+	"github.com/had-nu/masthead/internal/checker"
+	"github.com/had-nu/masthead/internal/mapper"
+	"github.com/had-nu/masthead/internal/output"
 )
 
 const version = "2.0.0"
@@ -36,21 +37,11 @@ const (
 )
 
 func displayBanner() {
-	fmt.Println(colorPurpleBold + `
-  ·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·`)
-	fmt.Println(colorPurpleDim + `
-  ░ ░ ▓ ░ submersion protocol active ░ headers exposed ░ trust eroding ░ ▓ ░ ░`)
-	fmt.Println(colorPurpleBold + `
-  ███╗   ███╗ █████╗ ███████╗████████╗██╗  ██╗███████╗ █████╗ ██████╗
-  ████╗ ████║██╔══██╗██╔════╝╚══██╔══╝██║  ██║██╔════╝██╔══██╗██╔══██╗
-  ██╔████╔██║███████║███████╗   ██║   ███████║█████╗  ███████║██║  ██║
-  ██║╚██╔╝██║██╔══██║╚════██║   ██║   ██╔══██║██╔══╝  ██╔══██║██║  ██║
-  ██║ ╚═╝ ██║██║  ██║███████║   ██║   ██║  ██║███████╗██║  ██║██████╔╝
-  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ` + colorReset)
-	fmt.Println(colorPurple + "                  security headers drift down into the abyss — we surface them" + colorReset)
-	fmt.Println(colorPurpleDim + "                                              v" + version + colorReset)
-	fmt.Println(colorPurpleBold + `
-  ·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·:·` + colorReset)
+	timestamp := time.Now().Format("15:04:05.000")
+	fmt.Printf("%s[%s] SYSTEM_INIT :: MASTHEAD v%s%s\n", colorPurpleBold, timestamp, version, colorReset)
+	fmt.Printf("%s[%s] PROTOCOL    :: SUBMERSION ACTIVE%s\n", colorPurpleDim, timestamp, colorReset)
+	fmt.Printf("%s[%s] TARGET      :: EXPOSING SECURITY HEADERS%s\n", colorPurpleDim, timestamp, colorReset)
+	fmt.Println(colorPurple + "--------------------------------------------------------" + colorReset)
 	fmt.Println()
 }
 

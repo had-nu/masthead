@@ -10,7 +10,7 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/had-nu/sec-headers-check/internal/headers"
+	"github.com/had-nu/masthead/internal/headers"
 )
 
 const (

@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/had-nu/sec-headers-check/internal/headers"
+	"github.com/had-nu/masthead/internal/headers"
 )
 
 const (

@@ -3,7 +3,7 @@ package output
 import (
 	"net/http"
 
-	"github.com/had-nu/sec-headers-check/internal/headers"
+	"github.com/had-nu/masthead/internal/headers"
 )
 
 // The score is proportional to the sum of Points for each present header divided by headers.MaxPossibleScore.
